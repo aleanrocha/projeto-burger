@@ -6,7 +6,7 @@ const Btn = styled.button`
   height: 68px;
   text-align: center;
 
-  background-color: #d93856;
+  background-color: ${props => props.$isBack ? '#ffffff23' : '#d93856'};
   color: #fff;
   border: none;
   font-size: 1.0625rem;
