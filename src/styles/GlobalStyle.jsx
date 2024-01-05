@@ -8,8 +8,13 @@ const GlobalStyle = createGlobalStyle`
     font-family: sans-serif, 'Roboto';
   }
   body {
+    min-height: 100vh;
     background-color: #0A0A10;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
   }
 `
 
