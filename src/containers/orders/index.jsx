@@ -20,20 +20,33 @@ const IndexOrder = () => {
     handleGetOrder()
   }, [])
 
+  const handleDeleteOrder = async(orderId) => {
+    const newOrder = orders.filter(order => order.id !== orderId)
+    setOrders(newOrder)
+    await axios.delete(`${baseURL}/orders/${orderId}`)
+  }
+
   return (
     <MainContent>
       <Image src={BurgerBagImage} alt='imagem de saco de hambúrguer' />
       <Title>Pedidos</Title>
       <ContainerOrders>
-        {orders.map((order) => (
+        { orders.length > 0 ? orders.map((order) => (
           <Order key={order.id}>
             <div>
               <Text>{order.order}</Text>
               <Text className='clientName'>{order.clientName}</Text>
             </div>
-            <FaRegTrashCan />
+            <FaRegTrashCan onClick={() => handleDeleteOrder(order.id)} />
           </Order>
-        ))}
+        ))
+        : (
+          <Order >
+            <Text className='notFound'>Ops, que pena! Nada por aqui.</Text>
+          </Order>
+        )
+      }
+
       </ContainerOrders>
       <Button $isBack={true}>Voltar</Button>
     </MainContent>

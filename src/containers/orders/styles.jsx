@@ -46,4 +46,9 @@ export const Text = styled.p`
   &.clientName {
     font-weight: 700;
   }
+  &.notFound {
+    text-align: center;
+    font-weight: 700;
+    width: 100%;
+  }
 `
