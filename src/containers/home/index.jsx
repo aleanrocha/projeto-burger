@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import MainContent from '../../components/MainContent'
 import { Image, FormContainer, InputLabel, Input } from './styles'
@@ -9,6 +10,7 @@ import Button from '../../components/Button'
 const IndexHome = () => {
   const order = useRef()
   const clientName = useRef()
+  const navigate = useNavigate()
 
   const baseURL = 'http://localhost:3000'
 
@@ -20,6 +22,7 @@ const IndexHome = () => {
       order: orderValue,
       clientName: clientNameValue,
     })
+    navigate('/projeto-burger/orders')
   }
 
   return (

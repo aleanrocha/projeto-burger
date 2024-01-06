@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { FaRegTrashCan } from 'react-icons/fa6'
 import MainContent from '../../components/MainContent'
 import { Image, ContainerOrders, Order, Text } from './styles'
@@ -9,6 +10,7 @@ import Button from '../../components/Button'
 
 const IndexOrder = () => {
   const [orders, setOrders] = useState([])
+  const navigate = useNavigate()
 
   const baseURL = 'http://localhost:3000'
 
@@ -46,9 +48,8 @@ const IndexOrder = () => {
           </Order>
         )
       }
-
       </ContainerOrders>
-      <Button $isBack={true}>Voltar</Button>
+      <Button $isBack={true} onClick={() => navigate('/projeto-burger')}>Voltar</Button>
     </MainContent>
   )
 }
