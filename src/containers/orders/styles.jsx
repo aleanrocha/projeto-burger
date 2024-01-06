@@ -18,6 +18,7 @@ export const Order = styled.div`
   border-radius: 0.87rem;
   background: rgba(255, 255, 255, 0.25);
   padding: 1rem 1.68rem;
+  min-width: 342px;
   min-height: 101px;
 
   & > div {
@@ -32,6 +33,10 @@ export const Order = styled.div`
   & > svg {
     font-size: 1.5rem;
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 413px) {
+    min-width: auto;
   }
 `
 
