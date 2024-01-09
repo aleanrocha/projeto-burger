@@ -12,7 +12,7 @@ const IndexHome = () => {
   const clientName = useRef()
   const navigate = useNavigate()
 
-  const baseURL = 'http://localhost:3000'
+  const baseURL = 'https://api-register-orders-for-you.vercel.app'
 
   const handleSubmit = async (e) => {
     e.preventDefault()

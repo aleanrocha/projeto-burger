@@ -12,7 +12,7 @@ const IndexOrder = () => {
   const [orders, setOrders] = useState([])
   const navigate = useNavigate()
 
-  const baseURL = 'http://localhost:3000'
+  const baseURL = 'https://api-register-orders-for-you.vercel.app'
 
   useEffect(() => {
     const handleGetOrder = async () => {
